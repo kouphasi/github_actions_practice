@@ -1,0 +1,13 @@
+name: labeled issue
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  say_is_labeled:
+    runs-on: ubuntu-latest
+    if: github.event.label.name == 'test/generate'
+    steps:
+      - name: say hello
+        run: echo "test/generate is labeled!!!"
